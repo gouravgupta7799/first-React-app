@@ -1,7 +1,9 @@
-import React from 'react'
+import React from 'react';
+import './Expenses.css';
 import ExpenseItem from "./ExpenseItem";
+
 export default function Expense(props) {
-  return (<>
+  return (<div className='expenses'>
     {
       props.expenses.length === 0 ? 'no expenses to display' :
         props.expenses.map((expenses) => {
@@ -15,6 +17,6 @@ export default function Expense(props) {
           )
         })
     }
-  </>
+  </div>
   )
 }
