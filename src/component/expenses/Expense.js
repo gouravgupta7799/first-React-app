@@ -2,7 +2,7 @@ import React from 'react';
 import './Expenses.css';
 import ExpenseItem from "./ExpenseItem";
 
-export default function Expense(props) {
+const Expense = (props) => {
   return (<div className='expenses'>
     {
       props.expenses.length === 0 ? 'no expenses to display' :
@@ -20,3 +20,5 @@ export default function Expense(props) {
   </div>
   )
 }
+
+export default Expense;
