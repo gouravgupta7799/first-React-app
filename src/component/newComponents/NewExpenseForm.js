@@ -2,24 +2,52 @@ import React, { useState } from 'react';
 import './NewExpenseForm.css';
 
 const NewExpenseForm = () => {
-  const [enterTitle,setEnterTitle]=useState('')
-  const [enterDate, setEnterDate]=useState('')
+  const [enterTitle, setEnterTitle] = useState('')
+  const [enterDate, setEnterDate] = useState('')
   const [enterPrice, setEnterPrice] = useState('')
-  
+  // const [userInput, setUserInput] = useState({
+  //   setEnterTitle: '',
+  //   setEnterDate: '',
+  //   setEnterPrice: ''
+
+  // })
   const titleChange = (event) => {
     setEnterTitle(event.target.value)
-    console.log(event.target.value)
+
+    // setUserInput({
+    //   ...userInput,
+    //   setEnterTitle: event.target.value
+    // })
   }
   const dateChange = (event) => {
     setEnterDate(event.target.value)
-    console.log(event.target.value)
+
+    // setUserInput({
+    //   ...userInput,
+    //   setEnterDate: event.target.value
+    // })
   }
   const priceChange = (event) => {
     setEnterPrice(event.target.value)
-    console.log(event.target.value)
+
+    // setUserInput({
+    //   ...userInput,
+    //   setEnterPrice:
+    //     event.target.value
+    // })
+  }
+  const submitHendler = (e) => {
+    e.preventDefault()
+    const expenseData = {
+      title: enterTitle,
+      price: enterPrice,
+      date: new Date(enterDate),
+
+    }
+    console.log(expenseData)
   }
   return (
-    <form>
+    <form onSubmit={submitHendler}>
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
           <div>
@@ -39,7 +67,7 @@ const NewExpenseForm = () => {
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
           <div>
-            <input type="date" min='2023-12-01' max='2024-03-01' onChange={dateChange} />
+            <input type="date" min='2020-01-01' max='2024-12-31' onChange={dateChange} />
             <label>date</label>
           </div>
         </div>
