@@ -1,10 +1,11 @@
 
+import { useState } from 'react';
 import './app.css';
 import Expense from './component/expenses/Expense';
 import NewExpense from './component/newComponents/NewExpense';
 
 const App = () => {
-  const expenses = [
+  const [expenses, addExpenseHandler] = useState([
     {
       id: "e1",
       title: "Toilet Paper",
@@ -35,11 +36,17 @@ const App = () => {
       amount: 450,
       date: new Date(2021, 5, 12),
     },
-  ];
+  ]);
+  const addToList = (ex) => {
+    const exp = {
+      ...ex
+    }
+    addExpenseHandler([...expenses, exp]);
+  }
   return (
     <div className='head'>
       <h2>Let's get started!</h2>
-      <NewExpense />
+      <NewExpense addToList={addToList} />
       {
         <Expense
           expenses={expenses} >

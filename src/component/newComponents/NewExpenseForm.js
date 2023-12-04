@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './NewExpenseForm.css';
 
-const NewExpenseForm = () => {
+const NewExpenseForm = (props) => {
   const [enterTitle, setEnterTitle] = useState('')
   const [enterDate, setEnterDate] = useState('')
   const [enterPrice, setEnterPrice] = useState('')
@@ -9,7 +9,6 @@ const NewExpenseForm = () => {
   //   setEnterTitle: '',
   //   setEnterDate: '',
   //   setEnterPrice: ''
-
   // })
   const titleChange = (event) => {
     setEnterTitle(event.target.value)
@@ -44,14 +43,18 @@ const NewExpenseForm = () => {
       date: new Date(enterDate),
 
     }
-    console.log(expenseData)
+    props.newExpenseAdded(expenseData)
+    setEnterTitle('')
+    setEnterDate('')
+    setEnterPrice('')
+
   }
   return (
     <form onSubmit={submitHendler}>
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
           <div>
-            <input type="text" onChange={titleChange} />
+            <input type="text" value={enterTitle} onChange={titleChange} />
             <label>title</label>
           </div>
         </div>
@@ -59,7 +62,7 @@ const NewExpenseForm = () => {
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
           <div>
-            <input type="number" min='0.01' step='0.01' onChange={priceChange} />
+            <input type="number" value={enterPrice} min='0.01' step='0.01' onChange={priceChange} />
             <label>price</label>
           </div>
         </div>
@@ -67,7 +70,7 @@ const NewExpenseForm = () => {
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
           <div>
-            <input type="date" min='2020-01-01' max='2024-12-31' onChange={dateChange} />
+            <input type="date" value={enterDate} min='2020-01-01' max='2024-12-31' onChange={dateChange} />
             <label>date</label>
           </div>
         </div>
@@ -79,4 +82,4 @@ const NewExpenseForm = () => {
   )
 }
 
-export default NewExpenseForm
+export default NewExpenseForm;
