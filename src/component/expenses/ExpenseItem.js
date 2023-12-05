@@ -4,6 +4,7 @@ import ExpenseDetails from "./ExpenseDetails"
 import Card from '../UI/Card';
 import { useState } from 'react';
 
+
 const ExpenseItem = (props) => {
   const [title,setTitle]=useState(props.title)
   const [amount, setAmount]=useState(props.amount)
@@ -20,6 +21,7 @@ const ExpenseItem = (props) => {
   const Delete = (id) => {
     console.log('Clicked!! for Delete')
   }
+
   return (
     <Card className="expense-item">
 

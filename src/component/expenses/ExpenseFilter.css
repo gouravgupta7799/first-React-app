@@ -1,0 +1,15 @@
+.expense-filter{
+  background: white;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.expense-filter__control{
+  background: #17a390;
+  border-radius: 6px;
+  padding: 10px;
+
+}
