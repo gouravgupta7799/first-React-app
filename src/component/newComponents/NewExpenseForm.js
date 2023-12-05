@@ -39,7 +39,7 @@ const NewExpenseForm = (props) => {
     e.preventDefault()
     const expenseData = {
       title: enterTitle,
-      price: enterPrice,
+      amount: enterPrice,
       date: new Date(enterDate),
 
     }
@@ -63,7 +63,7 @@ const NewExpenseForm = (props) => {
         <div className='new-expense__control'>
           <div>
             <input type="number" value={enterPrice} min='0.01' step='0.01' onChange={priceChange} />
-            <label>price</label>
+            <label>amount</label>
           </div>
         </div>
       </div>

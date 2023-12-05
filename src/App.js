@@ -24,7 +24,6 @@ const App = () => {
       id: "e3",
       title: "Car Insurance",
       location: "Chennai",
-
       amount: 294.67,
       date: new Date(2021, 11, 28),
     },
@@ -32,7 +31,6 @@ const App = () => {
       id: "e4",
       title: "New Desk (Wooden)",
       location: "Kerala",
-
       amount: 450,
       date: new Date(2021, 5, 12),
     },
@@ -42,6 +40,7 @@ const App = () => {
       ...ex
     }
     addExpenseHandler([...expenses, exp]);
+    console.log(exp)
   }
   return (
     <div className='head'>
