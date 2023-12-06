@@ -36,20 +36,25 @@ const App = () => {
     },
   ]);
   const addToList = (ex) => {
-    const exp = {
-      ...ex
-    }
-    addExpenseHandler([...expenses, exp]);
-    console.log(exp)
+    addExpenseHandler((prev) => {
+      return [...prev, ex]
+    });
+  }
+  const DeleteFromList = (expense) => {
+    addExpenseHandler(
+      expenses.filter((e) => {
+        return (e.id !== expense.id)
+      })
+    )
   }
   return (
     <div className='head'>
       <h2>Let's get started!</h2>
       <NewExpense addToList={addToList} />
       {
-        <Expense
-          expenses={expenses} >
-        </Expense >
+        <Expense expenses={expenses}
+          DeleteFromList={DeleteFromList}
+        />
       }
     </div>
   );
