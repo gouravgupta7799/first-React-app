@@ -1,7 +1,5 @@
 .expense-filter{
   background: white;
-  display: flex;
-  justify-content: end;
   align-items: center;
   padding: 10px;
   border-radius: 4px;

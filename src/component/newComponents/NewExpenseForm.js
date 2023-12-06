@@ -70,7 +70,7 @@ const NewExpenseForm = (props) => {
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
           <div>
-            <input type="date" value={enterDate} min='2020-01-01' max='2024-12-31' onChange={dateChange} />
+            <input type="date" value={enterDate} min='2021-01-01' max='2024-12-31' onChange={dateChange} />
             <label>date</label>
           </div>
         </div>
