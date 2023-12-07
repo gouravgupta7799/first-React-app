@@ -19,7 +19,7 @@ const ExpenseItem = (props) => {
   }
 
   const Delete = (expense) => {
-    props.DeleteFrom(expense)
+    props.DeleteFromUl(expense)
     console.log('Clicked!! for Delete')
   }
 
